@@ -1,0 +1,21 @@
+
+html {
+font-family: sans-serif;
+}
+body{
+  width: 50%;
+  margin: 0 auto;
+}
+.lastresult{
+  color: white;
+  padding: 3px;
+}
+.guessSubmit
+{
+  background-color: blue;
+  color: white;
+  border-radius: 40px;
+  width: 10%;
+  padding: 5px 5px;
+  font-size: 12px;
+}

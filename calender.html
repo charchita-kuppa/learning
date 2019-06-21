@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>calender</title>
+    <style>
+      h1{
+        font-weight:bold;
+      }
+      div{
+        width: 800px;
+      }
+      li{
+        display: inline-block;
+        width: 170px;
+        height: 30px;
+        background-color: purple;
+        color: white;
+        text-align: left;
+        margin: 3px;
+        padding: 0px;
+
+      }
+    </style>
+
+  </head>
+  <body>
+    <label for="calender">select month</label>
+    <select id="calender">
+    <option value="">please choose a month</option>
+    <option value="jan">january</option>
+    <option value="feb">febraury</option>
+    <option value="mar">march</option>
+    <option value="apr">april</option>
+    <option value="may">may</option>
+    <option value="june">june</option>
+    <option value="july">july</option>
+    <option value="aug">august</option>
+    <option value="sept">september</option>
+    <option value="oct">october</option>
+    <option value="nov">november</option>
+    <option value="dec">december</option>
+    </select>
+    <h1></h1>
+    <div class = "date">
+
+    </div>
+    <script>
+      var select=document.querySelector('select');
+      var h1=document.querySelector('h1');
+      var date=document.querySelector('.date');
+
+      var list=document.createElement('ul');
+      date.appendChild(list);
+      list.innerHTML='';
+
+      select.onchange=function(){
+            var choice=select.value;
+            switch(choice){
+              case 'jan':
+                h1.textContent='January';
+                createCalender(31,choice);
+                break;
+              case 'feb':
+                h1.textContent='Febraury';
+                createCalender(28,choice);
+                break;
+              case 'mar':
+                h1.textContent='March';
+                createCalender(31,choice);
+                break;
+              case 'apr':
+                h1.textContent='April';
+                createCalender(30,choice);
+                break;
+              case 'may':
+                h1.textContent='May';
+                createCalender(31,choice);
+                break;
+              case 'june':
+                h1.textContent='June';
+                createCalender(30,choice);
+                break;
+              case 'july':
+                h1.textContent='July';
+                createCalender(31,choice);
+                break;
+              case 'aug':
+                h1.textContent='August';
+                createCalender(31,choice);
+                break;
+              case 'sept':
+                h1.textContent='September';
+                createCalender(30,choice);
+                break;
+              case 'oct':
+                h1.textContent='October';
+                createCalender(31,choice);
+                break;
+              case 'nov':
+                h1.textContent='November';
+                createCalender(30,choice);
+                break;
+               case 'dec':
+                h1.textContent='December';
+                createCalender(31,choice);
+                break;
+
+              default :
+                h1.textContent='Please choose a month';
+              break;
+
+            }
+      };
+
+      function createCalender(days,choice){
+        list.innerHTML='';
+        for(var i=0;i<=days;i++){
+          var listItem=document.createElement('li');
+          listItem.textContent=i;
+          list.appendChild(listItem);
+        }
+      }
+    </script>
+  </body>
+</html>
